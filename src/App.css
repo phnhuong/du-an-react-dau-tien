@@ -1,0 +1,7 @@
+/*Trang trí cho cái khung Header*/
+.header-container {
+  background-color: #282c34; /*màu đen xám */
+  color: white; /*chữ trắng */
+  padding: 20px; /*khoảng cách bên trong*/
+  text-align: center; /*căn giữa*/
+}

@@ -1,0 +1,73 @@
+/* Khung bao ngoài */
+.todo-container {
+  width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Khu vực nhập liệu */
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input {
+  flex: 1; /* Chiếm hết khoảng trống còn lại */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+}
+
+/* Nút Thêm (Màu xanh) */
+.add-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.add-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Danh sách (UL) */
+.todo-list {
+  list-style: none; /* Bỏ dấu chấm đen */
+  padding: 0;
+}
+
+/* Từng dòng công việc (LI) */
+.todo-list li {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  font-size: 16px;
+  
+  /* QUAN TRỌNG: Dàn hàng ngang để đẩy nút Xóa sang phải */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Nút Xóa (Màu đỏ, nền trong suốt) */
+.delete-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: 0.2s; /* Hiệu ứng chuyển màu mượt */
+}
+
+.delete-btn:hover {
+  background-color: #ffebee; /* Nền đỏ nhạt khi rê chuột */
+  color: red;
+}
