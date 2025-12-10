@@ -1,10 +1,13 @@
+import TodoList from "../components/TodoList";
+
 function Home() {
-    return (
-        <div>
-        <h1>🏠 TRANG CHỦ</h1>
-        <p>Chào mừng đến với ứng dụng React của Phạm Hồng.</p>
-        <p>Đây là nơi tôi luyện kỹ năng lập trình.</p>
-        </div>
-    )
+  return (
+    <div>
+      <h2 className="text-2xl font-bold text-center my-5 text-blue-600">
+        Danh sách công việc
+      </h2>
+      <TodoList />
+    </div>
+  );
 }
 export default Home;
