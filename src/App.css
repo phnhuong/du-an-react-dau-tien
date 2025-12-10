@@ -5,3 +5,24 @@
   padding: 20px; /*khoảng cách bên trong*/
   text-align: center; /*căn giữa*/
 }
+.menu {
+  background-color: #f0f0f0;
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+/* Từng nút trong menu */
+.menu-item {
+  margin: 0 15px;
+  text-decoration: none;/* Bỏ gạch chân */
+  color: #333;
+  font-weight: bold;
+  font-size: 18px;
+}
+.menu-item:hover {
+  color: #007bff;/* Đổi màu xanh khi rê chuột */
+}
+/* Khu vực nội dung chính */
+.main-content {
+  padding: 20px;
+}
