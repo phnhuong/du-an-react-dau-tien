@@ -1,33 +1,43 @@
 import { useState, useEffect } from "react";
 
 function Users() {
-  // 1. Kho chứa danh sách người dùng (Ban đầu rỗng)
   const [users, setUsers] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // 2. Gọi điện lên Server khi trang vừa mở ra
   useEffect(() => {
-    // Gọi API lấy danh sách user mẫu
     fetch("https://jsonplaceholder.typicode.com/users")
-      .then((response) => response.json()) // Chuyển dữ liệu về dạng JSON
+      .then((response) => response.json())
       .then((data) => {
-        // Có dữ liệu rồi thì nhét vào kho
         setUsers(data);
+        setIsLoading(false);
       })
-      .catch((error) => console.log("Lỗi rồi:", error));
-  }, []); // [] nghĩa là chỉ gọi 1 lần khi mới vào trang
+      .catch((error) => {
+        console.log("Lỗi:", error);
+        setIsLoading(false);
+      });
+  }, []);
 
   return (
     <div style={{ padding: 20 }}>
-      <h1>👥 DANH SÁCH NGƯỜI DÙNG (Từ API)</h1>
+      <h1>DANH SÁCH NGƯỜI DÙNG</h1>
 
-      <ul>
-        {/* Duyệt qua danh sách và in ra */}
-        {users.map((user) => (
-          <li key={user.id} style={{ marginBottom: 10 }}>
-            <strong>{user.name}</strong> - {user.email}
-          </li>
-        ))}
-      </ul>
+      {isLoading ? (
+        <p style={{ color: "blue" }}>Dang tai du lieu...</p>
+      ) : (
+        <ul>
+          {users.map((user) => (
+            <li key={user.id} style={{ marginBottom: 20, borderBottom: "1px solid #ccc" }}>
+              {/* Tên in đậm */}
+              <span style={{ fontWeight: "bold" }}>{user.name}</span>
+              <br />
+              {/* Email màu xám */}
+              <span style={{ color: "gray", fontSize: "14px" }}>
+                 Email: {user.email}
+              </span>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }
